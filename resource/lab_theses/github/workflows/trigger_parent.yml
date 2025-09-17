@@ -1,0 +1,33 @@
+name: 'Submodule Notify Parent'
+
+on:
+  push:
+    branches:
+      - main    
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  notify:
+    name: 'Submodule Notify Parent'
+    runs-on: ubuntu-latest
+
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run:
+        shell: bash
+
+    # We need the token (PAT_TOKEN) to run the REST API.
+    # Personal Access Token (PAT) can be generated and copied over the repository.
+    steps:
+    - name: Github REST API Call
+      env:
+        PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        PARENT_REPO: klab-aizu/web-int
+        PARENT_BRANCH: main
+        WORKFLOW_ID: 147555066
+      run: |
+        # uncomment the following line to get WORKFLOW_ID
+        # curl -X GET -H "Authorization: token $PAT_TOKEN" https://api.github.com/repos/$PARENT_REPO/actions/workflows
+        curl -fL --retry 3 -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: token ${{ env.PAT_TOKEN }}" https://api.github.com/repos/${{ env.PARENT_REPO }}/actions/workflows/${{ env.WORKFLOW_ID }}/dispatches -d '{"ref":"${{ env.PARENT_BRANCH }}"}'

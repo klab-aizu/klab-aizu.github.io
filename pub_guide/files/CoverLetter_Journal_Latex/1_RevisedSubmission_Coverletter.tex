@@ -1,0 +1,175 @@
+% LaTeX rebuttal letter example. 
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+%\usepackage{lipsum} % to generate some filler text
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{soul}
+% import Eq and Section references from the main manuscript where needed
+% \usepackage{xr}
+% \externaldocument{manuscript}
+
+% package needed for optional arguments
+\usepackage{xifthen}
+% define counters for reviewers and their points
+
+\usepackage{hyperref}
+
+\newcounter{reviewer}
+\setcounter{reviewer}{0}
+\newcounter{point}[reviewer]
+\setcounter{point}{0}
+
+\usepackage{xcolor}
+\definecolor{review-color}{rgb}{0.1, 0.1, 0.8}
+
+\usepackage[english]{babel}
+\usepackage{amsmath}
+
+\makeatletter
+\renewcommand{\thefigure}{A-\thereviewer.\@arabic\c@figure}
+\renewcommand{\thetable}{A-\thereviewer.\@arabic\c@table}
+\renewcommand{\thepage}{A-\arabic{page}}
+
+\makeatletter
+
+
+\addto\captionsenglish{% Replace "english" with the language you use
+	\renewcommand{\contentsname}%
+	{{\large Reviewer \hfill  Page}}%
+}
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{1}
+
+% This refines the format of how the reviewer/point reference will appear.
+\renewcommand{\thepoint}{P\,\thereviewer.\arabic{point}} 
+
+% command declarations for reviewer points and our responses
+\newcommand{\reviewersection}{\stepcounter{reviewer} \bigskip \hrule
+                  \section{Reviewer \thereviewer}}
+
+
+\newenvironment{point}
+   {\refstepcounter{point} \bigskip \noindent {\textbf{\color{blue}{Reviewer~Point~\thepoint} }} ---\ \color{review-color} }
+   {\par }
+
+\newcommand{\shortpoint}[1]{\refstepcounter{point}  \bigskip \noindent 
+	{\textbf{\color{blue}{Reviewer~Point~\thepoint} }} ---~\textcolor{review-color}{#1}\par }
+
+\newenvironment{reply}
+   {\medskip \noindent \begin{sf}\textbf{\color{red}{Reply}}:\  }
+   {\medskip \end{sf}}
+
+\newcommand{\shortreply}[2][]{\medskip \noindent \begin{sf}\textbf{\color{red}{Reply}}:\  #2
+	\ifthenelse{\equal{#1}{}}{}{ \hfill \footnotesize (#1)}%
+	\medskip \end{sf}}
+
+
+
+\begin{document}
+%\section*{Cover Letter}
+\begin{sf}
+{\small 
+\noindent
+\textbf{\underline{Paper ID:}} TCAD-2020-0486 \\
+\textbf{\underline{Title:}} HotCluster: A thermal-aware defect recovery method for Through-Silicon-Vias Towards Reliable 3-D ICs systems\\
+\textbf{\underline{Authors:}} Khanh N. Dang, Akram Ben Ahmed, Abderazek Ben Abdallah, and Xuan-Tu Tran \\
+%\textbf{\underline{Manuscript NO:}} TVLSI-00334-2019\\
+\vspace{0.5cm}}
+\begin{flushright}
+	\today
+\end{flushright}
+
+\noindent
+Dear Editors 
+
+\vspace{.5cm}
+\noindent
+Thank you for allowing us to revise our manuscript, with an opportunity to address the reviewers’ 
+comments. 
+\vspace{.5cm}
+
+\noindent
+Please find attached our revised manuscript titled ``HotCluster: A thermal-aware defect recovery method for Through-Silicon-Vias Towards Reliable 3-D ICs systems'', which we previously submitted for publication as an original research article in IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems. The paper ID is TCAD-2020-0486.
+\vspace{.5cm}
+
+\noindent
+We are uploading (a) our point-by-point response to the comments (below) (response to 
+reviewers), (b) an updated manuscript with yellow highlighting indicating changes, and (c) a clean 
+updated manuscript without highlights.
+\vspace{.5cm}
+
+\noindent
+This work has not been submitted elsewhere. 
+
+\vspace{.3cm}
+\noindent
+This work is based on our preliminary work in [21] with the additional new contributions as follows:
+
+
+\begin{itemize}
+	
+	\item \colorbox{red}{Similar:} The architecture of TSV group as it is clustered into 4 subset around the router. The mapping approach is center priority (we called it CPWI).
+	\item \colorbox{green}{New:} Architecture with redundant clusters of TSV. Work in [21] has no redundancy.
+	\item \colorbox{green}{New:} A new online algorithm for  mapping named SAWI which is based on number of spare for each router.
+	\item \colorbox{green}{New:} A new offline algorithm for  mapping based on max-flow min-cut theorem and solved with Ford-Fulkerson method.
+	\item \colorbox{green}{New:} A thermal model for predicting fault rates that are accelerated by the operating temperature. The model is based on Arrherius's Law.
+	\item \colorbox{green}{New:} A new algorithm for inserting redundant clusters and correcting instead of uniformly insertion like using SAWI, CPWI or Ford-Fulkerson approach.
+
+	
+\end{itemize} 
+
+We believe the difference between this work the our preliminary work in [21] are substantial enough for publication. The evaluation results also show this work outperforms the previous work in [21].
+
+The overlapping part with [21] is the section III.A where we present the preliminary work. Other parts are new. As we listed above, the new contribution is up to 5/6 ideas (83\%); therefore, we strongly believe the new paper is good new for publication and is not a self-plagiarism of [21]. If you still hesitate about the overlapping, we attached in the submission the paper [21] for your information.
+
+\vspace{.3cm}
+
+\noindent
+{\small  \underline{Reference:}  [21]  Khanh N. Dang, Akram Ben Ahmed, Yuichi Okuyama, and Abderazek Ben Abdallah, ``Scalable design methodology and online algorithm 	for TSV-cluster defects recovery in highly reliable 3D-NoC systems,''
+	IEEE Transactions on Emerging Topics in Computing, vol. 8, no. 3, 	pp. 577–590, 2020.
+}
+
+\vspace{.3cm}
+
+
+\vspace{.3cm}
+\noindent
+The corresponding author is Khanh N. Dang (khanh.n.dang@vnu.edu.vn).
+
+\vspace{.3cm}
+\noindent
+Thank you for considering our manuscript. 
+
+\vspace{.5cm}
+
+
+\noindent 
+Respectfully yours, 
+
+\vspace{.1cm}
+\noindent
+Khanh N. Dang 
+
+\vspace{.2cm}
+
+
+
+\noindent
+SISLAB, VNU-UET, Vietnam National University Hanoi, Vietnam
+
+\noindent
+Tel: +84-904-899-490 
+
+\noindent
+E-mail:   khanh.n.dang@vnu.edu.vn 
+
+\vspace{.3cm}
+\noindent
+On behalf of all authors.
+\pagebreak
+\end{sf}
+
+\end{document}
+
+

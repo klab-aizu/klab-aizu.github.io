@@ -1,0 +1,308 @@
+%  The AAU Poster Theme.
+%  2013-05-08 v. 1.1.0
+%  Copyright 2013 by Jesper Kjær Nielsen <jkn@es.aau.dk>
+%
+%  This is free software: you can redistribute it and/or modify
+%  it under the terms of the GNU General Public License as published by
+%  the Free Software Foundation, either version 3 of the License, or
+%  (at your option) any later version.
+%
+%  This is distributed in the hope that it will be useful,
+%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%  GNU General Public License for more details.
+%
+%  You can find the GNU General Public License at <http://www.gnu.org/licenses/>.
+\documentclass[a1paper,portrait]{baposter}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Language, Encoding and Fonts
+% http://en.wikibooks.org/wiki/LaTeX/Internationalization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Select encoding of your inputs. Depends on
+% your operating system and its default input
+% encoding. Typically, you should use
+%   Linux  : utf8 (most modern Linux distributions)
+%            latin1 
+%   Windows: ansinew
+%            latin1 (works in most cases)
+%   Mac    : applemac
+% Notice that you can manually change the input
+% encoding of your files by selecting "save as"
+% an select the desired input encoding. 
+\usepackage[utf8]{inputenc}
+% Make latex understand and use the typographic
+% rules of the language used in the document.
+\usepackage[english]{babel}
+% Use the vector font Latin Modern which is going
+% to be the default font in latex in the future.
+\usepackage{helvet}
+% Change the default font family from roman to sans serif
+\renewcommand{\familydefault}{\sfdefault} % for text
+\usepackage[helvet]{sfmath} % for math
+% Choose the font encoding
+\usepackage[T1]{fontenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Graphics and Tables
+% http://en.wikibooks.org/wiki/LaTeX/Importing_Graphics
+% http://en.wikibooks.org/wiki/LaTeX/Tables
+% http://pgfplots.sourceforge.net/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You cannot use floats in the baposter theme.
+% We therefore load the caption package which provides
+% the command \captionof
+% Set up how figure and table captions are displayed
+\usepackage{caption}
+\captionsetup{
+  font=small,% set font size to footnotesize
+  labelfont=bf % bold label (e.g., Figure 3.2) font
+}
+% Make the standard latex tables look so much better
+\usepackage{array,booktabs}
+% For creating beautiful plots
+\usepackage{pgfplots}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mathematics
+% http://en.wikibooks.org/wiki/LaTeX/Mathematics
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Defines new environments such as equation,
+% align and split 
+\usepackage{amsmath}
+% Adds new math symbols
+\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Colours
+% http://en.wikibooks.org/wiki/LaTeX/Colors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\selectcolormodel{RGB}
+% define the three aau colors
+\definecolor{aaublue1}{rgb}{0.01,0.55,0.55}% dark blue
+\definecolor{aaublue2}{rgb}{0.005,0.27,0.27} % light blue
+\definecolor{aaublue3}{RGB}{204,233,234} % lighter blue
+\let\oldtextbf\textbf
+\renewcommand{\textbf}[1]{\textcolor{aaublue1}{\oldtextbf{#1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lists
+% http://en.wikibooks.org/wiki/LaTeX/List_Structures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Easier configuration of lists
+\usepackage{enumitem}
+%configure itemize
+\setlist{%
+  topsep=0pt,% set space before and after list
+  noitemsep,% remove space between items
+  labelindent=\parindent,% set the label indentation to the paragraph indentation
+  leftmargin=*,% remove the left margin
+  font=\color{aaublue1}\normalfont, %set the colour of all bullets, numbers and descriptions to aaublue1
+}
+% use set<itemize,enumerate,description> if you have an older latex distribution
+\setitemize[1]{label={\raise1.25pt\hbox{$\blacktriangleright$}}}
+\setitemize[2]{label={\scriptsize\raise1.25pt\hbox{$\blacktriangleright$}}}
+\setitemize[3]{label={\raise1.25pt\hbox{$\star$}}}
+\setitemize[4]{label={-}}
+%\setenumerate[1]{label={\theenumi.}}
+%\setenumerate[2]{label={(\theenumii)}}
+%\setenumerate[3]{label={\theenumiii.}}
+%\setenumerate[4]{label={\theenumiv.}}
+%\setdescription{font=\color{aaublue1}\normalfont\bfseries}
+
+% use setlist[<itemize,enumerate,description>,<level>] if you have a newer latex distribution
+%\setlist[itemize,1]{label={\raise1.25pt\hbox{$\blacktriangleright$}}}
+%\setlist[itemize,2]{label={\scriptsize\raise1.25pt\hbox{$\blacktriangleright$}}}
+%\setlist[itemize,3]{label={\raise1.25pt\hbox{$\star$}}}
+%\setlist[itemize,4]{label={-}}
+%\setlist[enumerate,1]{label={\theenumi.}}
+%\setlist[enumerate,2]{label={(\theenumii)}}
+%\setlist[enumerate,3]{label={\theenumiii.}}
+%\setlist[enumerate,4]{label={\theenumiv.}}
+%\setlist[description]{font=\color{aaublue1}\normalfont\bfseries}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Misc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% change/remove some names
+\addto{\captionsenglish}{
+  %remove the title of the bibliograhpy
+  \renewcommand{\refname}{\vspace{-0.7em}}
+  %change Figure to Fig. in figure captions
+  \renewcommand{\figurename}{Fig.}
+}
+% create links
+\usepackage{url}
+%note that the hyperref package is currently incompatible with the baposter class
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Macros
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\alert}[1]{{\color{aaublue1}#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document Start 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some changes that cannot be made in the preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set the background of the poster
+\background{
+  \begin{tikzpicture}[remember picture,overlay]%
+    %the poster background color
+    \draw[fill=white,draw=aaublue3] (current page.north west) rectangle (current page.south east);
+    %the header
+    \fill [fill=aaublue3] (current page.north west) rectangle ([yshift=-\headerheight] current page.north east);
+  \end{tikzpicture}
+}
+% if you want to reduce the space before and after equations, use and adjust
+% the following lines
+%\addtolength{\abovedisplayskip}{-2mm}
+%\addtolength{\belowdisplayskip}{-2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General poster setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{poster}{
+  %general options for the poster
+  grid=false,
+  columns=2,
+%  colspacing=4.2mm,
+  headerheight=0.075\textheight,
+  background=user,
+%  bgColorOne=red!42, %is used when background != user and none
+%  bgColorTwo=green!42, %is used when background is shaded
+  eyecatcher=true,
+  %posterbox options
+  headerborder=closed,
+  borderColor=aaublue1,
+%  headershape=roundedright,
+%  headershade=plain,
+  headerColorOne=white,
+%  headerColortwo=yellow!42, %is used when the header background is shaded
+  textborder=rectangle,
+  boxshade=plain,
+  boxColorOne=white,
+%  boxColorTwo=cyan!42,%is used when the text background is shaded
+  headerFontColor=aaublue2,
+  headerfont=\large\sf\bf,
+  linewidth=1pt
+}
+%the Eye Catcher (the logo on the left)
+{
+  %this can be commented out or replaced by a company/department logo
+  \raisebox{-0.25\headerheight}[0pt][0pt]{%
+      \makebox[.75\headerheight][c]{
+  \includegraphics[height=.75\headerheight]{figs/logo.ps} }}
+  
+}
+%the poster title
+{\color{aaublue2}\huge\bf
+%    \vspace*{-0.1em}
+On-Chip Communication Fault-Resilient Adaptive  Architectures and Algorithms  for 3D-IC Technologies        
+}
+%the author(s)
+{\color{aaublue2} \small
+%  \vspace{.8em}
+  Professor Abderazek Ben Abdallah, d8162103 Nam Khanh Dang | \textbf{ Adaptive Systems Laboratory}
+  
+}
+%the logo (the logo on the right)
+{
+  %this can be commented out or replaced by a company/department logo
+%  \includegraphics[height=.75\headerheight]{figs/asl.png}
+  \raisebox{-0.25\headerheight}[0pt][0pt]{%
+    \makebox[.75\headerheight][c]{
+        \includegraphics[height=.75\headerheight]{figs/asl.pdf} }}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% the actual content of the poster begins here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{posterbox}[name=intro,column=0,row=0]{Era of Many-core Chips}
+Hundreds of cores integrated on chip:
+\begin{itemize}
+  \item Technology scaling.
+  \item 3D integration.
+  \item Several examples:
+  \begin{itemize}
+      \item STMicro P2012/STHORM 
+      \item picoChip 
+      \item Scale-out
+      
+      \item Tilera Tile GX, Tile Pro 
+      \item Intel Polari 
+  \end{itemize}
+  \item Complex apps, stringent constraints:
+  \begin{itemize}
+      \item Massively parallel applications
+      \item Performance, power, scalability, reliability are key challenges.
+  \end{itemize}
+\end{itemize}
+
+\begin{tikzpicture}[remember picture,overlay]
+\node at (10,2.8) {\includegraphics[width=5cm]{figs/intro_pic.pdf}};
+\end{tikzpicture}
+\end{posterbox}
+
+\begin{posterbox}[name=3dnoc,column=0,below=intro]{3D Network-on-Chip}
+    \begin{center}
+        \includegraphics[width=1\linewidth]{figs/NoC2r.pdf}\\
+        \textbf{\small System architecture: (a) Network; (b) Vertical connection; (c) Router; (d) Wrapped router.}
+    \end{center}
+
+\end{posterbox}
+
+
+
+\begin{posterbox}[name=demand,column=0, below=3dnoc]{Reliability Demand}
+\begin{itemize}
+    \item NoCs are exposed to a variety of manufacturing and design factors making them vulnerable to different faults that cause corrupted message transfer or even catastrophic system failures.
+    \item The single-point-failure nature of NoC introduces a big concern to their reliability as they are the sole communication medium. 
+    \item Several works have dealt with separated types of faults; however, there is a demand of a comprehensively reliable 3D NoC system which can handle soft errors, hard faults and TSV defects.
+\end{itemize}
+\end{posterbox}
+
+
+
+\begin{posterbox}[name=tech,column=1]{Technology Features}
+%        \includegraphics[width=1\linewidth]{figs/router.pdf} \\
+        
+        \begin{center}
+            \includegraphics[width=.8\linewidth]{figs/case1.pdf} \\
+            \vspace*{-0.0cm}\textbf{\small TSV Sharing Process.}
+        \end{center}
+        
+         \begin{center}
+             \includegraphics[width=.85\linewidth]{figs/hft.pdf} \\
+            \vspace*{-0cm}\textbf{\small Hard Fault Tolerance: (a) Random Access Buffer; (b) Bypass-Link-on-Demand.}
+        \end{center}
+        
+        \begin{center}
+            \includegraphics[width=.8\linewidth]{figs/sft.pdf} \\
+            \vspace*{-0cm}\textbf{\small Soft Error Tolerance: Pipeline Computation Redundancy.}
+        \end{center}
+\end{posterbox}
+
+\begin{posterbox}[name=refs,column=1,span=1,below=tech]{References}
+
+    \bibliographystyle{plain}
+    \begin{thebibliography}{1}% Simple bibliography with widest label of 1
+        \itemsep=-0.01em% Save space between the separation
+        \setlength{\baselineskip}{0.4em}% Save space with longer lines
+        \bibitem{baposter} Dang Nam Khanh: \emph{\color{aaublue2}Development of On-Chip Communication Fault-Resilient Adaptive Architectures and Algorithms for 3D-IC Technologies}, Doctoral Thesis, The University of Aizu, 2017. 
+        \bibitem{pgfplots} Akram Ben Ahmed: \emph{\color{aaublue2}High-throughput Architecture and Routing Algorithms Towards the Design of Reliable Mesh-based Many-Core Network-on-Chip Systems}, Doctoral Thesis, The University of Aizu, 2015. 
+    \end{thebibliography}
+
+\end{posterbox}
+
+\begin{posterbox}[name=perf,column=0,above=bottom,span=2]{Result: Reliability, Performance and Layout }
+\begin{center}
+    \includegraphics[width=1\linewidth]{figs/reli.pdf} \\
+    \textbf{\small Reliability evaluation. Layer size: (a) $\mathbf{16\times16}$; (b) $\mathbf{32\times32}$; (c) $\mathbf{64\times64}$. }
+\end{center}
+        \includegraphics[width=.75\linewidth]{figs/perf.pdf}\hspace*{0.5cm} \includegraphics[width=.22\linewidth]{figs/layout.pdf} \\
+        \textbf{\small\hspace*{8cm}Performance evaluation. \hspace*{9cm} Layout of a $\mathbf{2\times2}$ layer.}
+\end{posterbox}
+\end{poster}
+\end{document}

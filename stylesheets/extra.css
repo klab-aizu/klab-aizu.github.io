@@ -1,0 +1,149 @@
+/* My avatar */
+.avatar {
+    display: block;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: #DDD;
+    float: right;
+    width: 250px;
+    top: 0rem;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    /* margin-right: 20px; */
+    align: right;   
+    transition: 0.75s all ease-in-out;
+}
+
+.avatar:hover {
+    border-radius: 5px;
+}
+
+@media (max-width: 699px) {
+    .avatar {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        align: none;
+        margin-bottom: 10px;
+    }
+}
+
+video {
+    display: block;
+    margin: 0 auto;
+}
+
+/* remove top bar shadow */
+
+.md-header{
+    box-shadow: none;
+    border-bottom: 0.05rem solid rgba(0,0,0,.07);
+
+}
+[data-md-color-primary=white] .md-tabs {
+    border-bottom: none;
+}
+
+/* for footer */
+
+[data-md-color-primary=white]  .md-footer{
+    border-top: 0.05rem solid rgba(0,0,0,.07);
+    color : #555555;
+    background: #ffffff;
+}
+
+/* for copyright box*/
+[data-md-color-primary=white]  .md-footer-meta {
+    
+    color : #999999;
+    background: #ffffff;
+}
+/* 
+[data-md-color-scheme=default] {
+    --md-footer-fg-color--light: #b55639;
+} */
+
+
+html .md-footer-meta.md-typeset a {
+    color: #e8b391;
+}
+
+/* for copyright  text */
+[data-md-color-primary=white]  .md-copyright__highlight {
+    color : #999999;
+}
+
+
+[dir=ltr] .md-header__title {
+    margin-left: 0.6rem;
+}
+
+
+
+[data-md-color-primary=white] {
+    --md-typeset-a-color: #b55639;
+
+}
+
+/* link colour in dark (slate) */
+[data-md-color-scheme=slate][data-md-color-primary=black] {
+    --md-typeset-a-color: #e8b391;
+
+}
+
+/* highlight color in dark(slate) */
+[data-md-color-scheme=slate]{
+    --md-typeset-mark-color: #afaf0060
+}
+
+
+
+[data-md-color-scheme="slate"] {
+    /* --md-default-fg-color: hsla(var(--md-hue), 15%, 90%, 1); */
+    --md-default-bg-color: hsla(var(--md-hue), 0%, 7%, 1);
+}
+[data-md-color-primary=black] .md-header {
+    background-color:  hsla(var(--md-hue), 0%, 7%, 1);
+}
+
+[data-md-color-primary=black] .md-tabs {
+    background-color:  hsla(var(--md-hue), 0%, 7%, 1);
+}
+
+/* dark-mode for iframe (google map) */
+
+[data-md-color-scheme="default"] iframe[src$="#only-dark"],
+[data-md-color-scheme="default"] iframe[src$="#gh-dark-mode-only"] {
+  display: none; /* Hide dark images in light mode */
+}
+
+/* light-mode for iframe (google map) */
+
+[data-md-color-scheme="slate"] iframe[src$="#only-light"],
+[data-md-color-scheme="slate"] iframe[src$="#gh-light-mode-only"] {
+  display: none; /* Hide light images in dark mode */
+}
+
+/* to enabling dark/light mode, follow the same instruction of image */
+
+/* <iframe src="  _source here_          #only-light"  style="filter:  grayscale(1)"</iframe> */
+/* <iframe src="  _source here_          #only-dark"  style="filter: invert(90%)  grayscale(1)"</iframe> */
+
+
+#logo_light_mode {
+    display: var(--md-footer-logo-light-mode);
+}
+
+#logo_dark_mode {
+    display: var(--md-footer-logo-dark-mode);
+}
+
+[data-md-color-scheme="default"] {
+    --md-footer-logo-dark-mode:         none;
+    --md-footer-logo-light-mode:         block;
+}
+
+[data-md-color-scheme="slate"] {
+    --md-footer-logo-dark-mode:         block;
+    --md-footer-logo-light-mode:         none;
+}

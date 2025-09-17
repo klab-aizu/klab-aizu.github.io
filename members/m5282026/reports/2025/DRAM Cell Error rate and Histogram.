@@ -1,0 +1,103 @@
+![image](https://github.com/user-attachments/assets/3b82b756-a003-4743-a2d7-4c3aa297f15b)
+![image](https://github.com/user-attachments/assets/0ecc2bef-34b7-4372-8dec-f55f09125144)
+Number of RTL values < 2e-5 seconds: 831
+
+Number of RTL values ≥ 2e-5 seconds: 169
+Python code for Histogram:
+
+import re
+import matplotlib.pyplot as plt
+
+def clean_value(value):
+    unit = value[-1]
+    number_value = float(value[:-1])
+
+    if unit == 'f':
+        number_value *= 1e-15
+    elif unit == 'p':
+        number_value *= 1e-12
+    elif unit == 'n':
+        number_value *= 1e-9
+    elif unit == 'u':
+        number_value *= 1e-6
+    elif unit == 'm':
+        number_value *= 1e-3
+    elif unit == 'k':
+        number_value *= 1e3
+
+    return number_value
+
+def extract_rtl_values(data):
+    rtl_pattern = r"rtl=\s*([\d\.-]+[fpnumk]?)"
+    rtl_values = re.findall(rtl_pattern, data)
+    return [clean_value(v) for v in rtl_values]
+
+def process_log_file(log_file_path):
+    with open(log_file_path, 'r') as f:
+        data = f.read()
+    
+    rtl_values = extract_rtl_values(data)
+
+    # Histogram
+    plt.hist(rtl_values, bins=100, edgecolor='black')
+    plt.xlabel('RTL (seconds)')
+    plt.ylabel('Frequency')
+    plt.title('Histogram of RTL Values')
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+    # RTL Table Output (first 10 for display)
+    rtl_table = [(i + 1, round(val, 8)) for i, val in enumerate(rtl_values)]
+    for index, rtl in rtl_table[:10]:
+        print(f"{index:>3}: {rtl:.8e} s")
+
+    return rtl_table
+
+# Example usage:
+log_file_path = '../src/dram_sweep_mc.lis'
+process_log_file(log_file_path)
+
+DRAM with Monte Carlo:
+
+** DRAM PTM45nm with Supported Monte Carlo Approach
+
+.include CMOSP.inc
+.include CMOSN.inc
+.include ../data/dram_sweep_input.txt
+
+.param VDD_VAL = 0.8
+.param L_VAL   = 45e-9
+.param W_VAL   = 120e-9
+.param CAP_VAL = 1f
+
+* Gaussian threshold variation: center=0.6V, stddev=0.2V
+.param THRESH_GAUSS = GAUSS(0.6, 0.2, 2.1)
+
+VSUP X 0 'VDD_VAL/2'
+VG   Y 0 0
+
+M1 X Y Z 0 CMOSN L=L_VAL W=W_VAL
+
+C1 Z 0 CAP_VAL
+
+.IC V(Z)=VDD_VAL
+
+* Transient with Monte Carlo sweep (1000 trials)
+.TRAN 0.001u 200u SWEEP MONTE=1000
+
+.OPTION POST BRIEF NOMOD PROBE MEASOUT
+.OPTION RANDOM_GENERATOR=mcg
+
+* Measurement using random threshold
+.MEASURE TRAN RTL TRIG AT=0 TARG V(Z) VAL='THRESH_GAUSS' FALL=1
+.MEASURE TRAN AVG_CUR AVG I(C1) FROM 0 to 'RTL'
+.MEASURE TRAN AVG_POW AVG P(C1) FROM 0 to 'RTL'
+
+.END
+
+Log File:
+
+
+
+
