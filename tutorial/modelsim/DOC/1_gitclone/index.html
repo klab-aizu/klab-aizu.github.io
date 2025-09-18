@@ -7503,14 +7503,14 @@
 
 
 
-<div id="mkdocs-encrypted-content" style="display:none">SHR3RrStVikcX5L2HQzhXA==;erBa8coL6QnSiJKRzxsU7CF99jrH9UI1uQ7pZAN9rMVQ1mEI6j/HQGFge5Cz1SX3pIwMF/6lWVCMPtaJrEXeLL9Jcx42MC7gW1gLH8Zbl/kFLTWTMQLm4J7kxjQhepL9Gz3xQ9I5jMdiUf97QILdWvStzk/0UwUgilfAsL0zVgYz3eDddY7wJXV5pigigCJ5lY1Wsc9DlAPoBj3j8Tj7+n4nGWA+WSBSCOEAFfDxawy6DwcUSVrP3VbWBNKqd0TLVtUnGch2NlvDrrqr83gVlB+1bZtWRTohI8lQOwBTir3KjxNJ417TZlPvuenqPhFJOfGaGVcmtR2ZDOTPKb1BNypXMmxRlpWSqBsCUCCAv5ruXgGW7BGjUfYAGcevZU9srJLsBuXJvZC/h8qQXO50ZarqRA6I89hxtOV/njph7z3BekLjvRuJJrqrDZoYp90TmGJIFHtdyXFbrSXZD3uXSj809nrCo+kSPVSFREKnxTRDCyEoTTAsAoq67nGntHtTagvw4Yxhc8+11USP84apE6f/K0FucvLhH9wTVBPkeh1nQHs1jIMgzU/i4M3EEU+lyDhoOddUjruRdRH7ZPDBX56k3++VjpWnatwk/teiF2oZ4reTg3kQUcy+TaY9hWmXafx5N+3ayLoNUkv/Ss+ng46PfnRnYCYM+kmJXWKHKqsYGFCsWkQ1vGPjWOZn2gV3zujyk6fyl0kvJ2wgITI3gsZZQN5DyA9XAoEzUFHWxKXm8RUVD0i9SPIU0dJHYteYo7IwU3U5d2V+3/M5Wn5bLLIc+WVuomWgS8ZX4c5nez8qH5AJPiALfLQBorSlBrzm</div>
+<div id="mkdocs-encrypted-content" style="display:none">9xbdzg7N287bd8P8o6LXsA==;9PhbicaK/CZEz1Cw6/ppBF4kkGO26O2PxQM3H6UGkfJUIU7hXPNaxvX4jTfaBN6pVEbwOtxCC2BWXdHb3h0se6aRGV+0HKM6ShMtpTII9ABvTGUtfaEWu0YNI5sZ8u8zSK3tI92CkTKm7QsC/H/b1+wGaT+fdoozMaPYAz8ZdHsK43/gR4jzuX/Eju25ow98TsWjqfXPUv0k0xDj0zHvOe33lDhZFoPXfHKJvcBVWAHVREhEqAEFbdbiS8VOyN9wpXB/TH3k7GkAeGy8p+HW9fuCNcABCzntOEK8hIbV2Ycgh7JwKpG6uSbQeolxnXS/RZKmT47PJpoL9QBQ2POu08lkDsbJvzB3U9GqLBt18tIgcAf+hhMz5katd0gtXogsq0vobqR18D8bOcxhg8q/7aVjVB9xZdn8RluV/YsC2sKEi2PjDLMsvs6p/vA2aJTa7RB2AcNNWG93CWN0xIrxunWbV2FYavF5itSxdd9ti94I/qJPIHACZna2MbbULHBfjFbCFRWK7unHtWUed1tbW56UyGnmOtl7VvCRKAZeBWJP8hcwObGDgIlrUS0tQJl9zzOh+QJFqc/hRxqhhEhFUvX7j8l0sGXQSlD0aS6HpXsxbohC5enkHXVRHTcMjUI4B7n27IzfboiuGF6iC91c7MUgE89cXNMoJ9Js3ZpjQhRgont5b77A+/16/SKINAKAuZ5uMEOhGngyEAliMI6MoC66Qh/GjPXc6Wys1KMHGQGe/HeXvDq1W1cYQYe3eo72aHmyPXmmMTH+nXzmUb/41mtj/lD0YsTU1YRv81faFcZR1g/o6zDFwHOHCtlNdw5X</div>
 <div id="mkdocs-decrypted-content" style="display:none">
     <form id="mkdocs-decrypt-form" class="md-content__inner md-typeset">
         <h1>㊙️ This website is password-protected. </h1>
         <p>Contact your administrator for access to this page.</p>
         <input class="md-input" type="text" id="mkdocs-content-user" placeholder="User name">
         <input class="md-input" type="password" id="mkdocs-content-password" placeholder="Password">
-        
+        <button class="md-button md-button--primary" id="mkdocs-decrypt-button">Decrypt</button>
         <p id="mkdocs-decrypt-msg"></p>
     </form>
 </div>
@@ -7519,7 +7519,7 @@
 var encryptcontent_id = "encryptcontent_1";
 var encryptcontent_path = "tutorial/modelsim/DOC/1_gitclone/";
 var decryption_failure_message = "Invalid password.";
-var encryptcontent_keystore = ["p+tIu1r6KR4dAMys8rvA8g==;5sPzmpnyrF6eAJYfIdZIRaSXwzVUrCUwYReSZnL4KJv3IokyOP6xs8Vm1fXIvrhghjlCjLbI1GtpzW7UZN3hvQHqTbouOE69QlcVETJCGKSeoMK4M4tIhTaqWb17XWmM;UXLZvB50fFglH2DdOJafdw==;suXr/Jyl6EnEcp41ju83rddsVwVg0c+EBtS4aeS26+4="];
+var encryptcontent_keystore = ["W5ol5dHXv/AsesVLE59diA==;wG7W4QHKoIaASCe5DAPV3ISEWL6ufz1hvz0GjRNkLRvvHWirOh0l6FT8YEWWgzUN0aC8O/3v96HS6SI8MVC1zhO6tck8J48BYocDSxV5qYIhv8bB4NJ5RlftWnzTmJn6;UXLZvB50fFglH2DdOJafdw==;suXr/Jyl6EnEcp41ju83rddsVwVg0c+EBtS4aeS26+4="];
 var encryptcontent_obfuscate = 0;
 
 </script>
