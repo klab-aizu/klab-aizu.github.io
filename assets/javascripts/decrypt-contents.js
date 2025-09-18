@@ -301,7 +301,7 @@ function decryptor_reaction(key_or_keys, password_input, decrypted_content, fall
         }
 
         // continue to decrypt others parts
-        let encrypted_something = {'myToc': ['div', 'id'], 'myTocButton': ['div', 'id']};
+        let encrypted_something = {'mkdocs-encrypted-toc': ['nav', 'class'], 'mkdocs-encrypted-footer': ['div', 'id'], 'mkdocs-encrypted-footer-meta': ['div', 'id']};
         decrypt_somethings(key, encrypted_something);
         if (typeof inject_something !== 'undefined') {
             decrypted_content = decrypt_somethings(key, inject_something);
