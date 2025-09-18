@@ -52,14 +52,14 @@ function decrypt_key_from_bundle(password, ciphertext_bundle, username) {
             if (parts.length == 3) {
                 keys = decrypt_key(pass, parts[0], parts[1], parts[2]);
                 if (keys) {
-                    
+                    setCredentials(null, pass);
                     return keys;
                 }
             } else if (parts.length == 4 && username) {
                 if (parts[3] == userhash) {
                     keys = decrypt_key(pass, parts[0], parts[1], parts[2]);
                     if (keys) {
-                        
+                        setCredentials(user, pass);
                         return keys;
                     }
                 }
@@ -116,6 +116,31 @@ function delItemName(key) {
 function getItemName(key) {
     return sessionStorage.getItem(key);
 };
+/* save username/password to sessionStorage/localStorage */
+function setCredentials(username, password) {
+    sessionStorage.setItem('encryptcontent_credentials', JSON.stringify({'user': username, 'password': password}));
+}
+
+/* try to get username/password from sessionStorage/localStorage */
+function getCredentials(username_input, password_input) {
+    const credentials = JSON.parse(sessionStorage.getItem('encryptcontent_credentials'));
+    if (credentials && !encryptcontent_obfuscate) {
+        if (credentials['user'] && username_input) {
+            username_input.value = decodeURIComponent(credentials['user']);
+        }
+        if (credentials['password']) {
+            password_input.value = decodeURIComponent(credentials['password']);
+        }
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/*remove username/password from localStorage */
+function delCredentials() {
+    sessionStorage.removeItem('encryptcontent_credentials');
+}
 
 /* Reload scripts src after decryption process */
 function reload_js(src) {
@@ -155,7 +180,47 @@ function reload_js(src) {
     }
 };
 
-
+/* Decrypt part of the search index and refresh it for search engine */
+function decrypt_search(keys, retry=true) {
+    let sessionIndex = sessionStorage.getItem('encryptcontent-index');
+    let could_decrypt = false;
+    if (sessionIndex) {
+        sessionIndex = JSON.parse(sessionIndex);
+        for (let i = 0; i < sessionIndex.docs.length; i++) {
+            let doc = sessionIndex.docs[i];
+            let location_sep = doc.location.indexOf(';');
+            if (location_sep !== -1) {
+                let location_id = doc.location.substring(0,location_sep);
+                let location_bundle = doc.location.substring(location_sep+1);
+                if (location_id in keys) {
+                    let key = keys[location_id];
+                    let location_decrypted = decrypt_content_from_bundle(key, location_bundle);
+                    if (location_decrypted) {
+                        doc.location = location_decrypted;
+                        doc.text = decrypt_content_from_bundle(key, doc.text);
+                        doc.title = decrypt_content_from_bundle(key, doc.title);
+                        could_decrypt = true;
+                    }
+                }
+            }
+        }
+        if (could_decrypt) {
+            //save decrypted index
+            sessionIndex = JSON.stringify(sessionIndex);
+            sessionStorage.setItem('encryptcontent-index', sessionIndex);
+            // force search index reloading on Worker
+            if (typeof searchWorker !== 'undefined') {
+                searchWorker.postMessage({init: true, sessionIndex: sessionIndex});
+            } else { //not default search plugin: reload whole page
+                window.location.reload();
+            }
+        }
+    } else if (retry) {
+        setTimeout(() => { //retry after one second if 'encryptcontent-index' not available yet
+            decrypt_search(keys, false);
+        }, 1000);
+    }
+};
 
 /* Decrypt speficique html entry from mkdocs configuration */
 function decrypt_somethings(key, encrypted_something) {
@@ -230,7 +295,7 @@ function decryptor_reaction(key_or_keys, password_input, decrypted_content, fall
         if (typeof key_or_keys === "object") {
             key = key_or_keys[encryptcontent_id];
             setKeys(key_or_keys);
-            
+            decrypt_search(key_or_keys);
         } else {
             key = key_or_keys;
         }
@@ -287,10 +352,26 @@ function init_decryptor() {
         content_decrypted = decrypt_action(
             username_input, password_input, encrypted_content, decrypted_content, key_from_storage
         );
-        
+        /* try to get username/password from sessionStorage */
+        if (content_decrypted === false) {
+            let got_credentials = getCredentials(username_input, password_input);
+            if (got_credentials) {
+                content_decrypted = decrypt_action(
+                    username_input, password_input, encrypted_content, decrypted_content
+                );
+            }
+        }
         decryptor_reaction(content_decrypted, password_input, decrypted_content, true);
     }
-    
+    else {
+        let got_credentials = getCredentials(username_input, password_input);
+        if (got_credentials) {
+            content_decrypted = decrypt_action(
+                username_input, password_input, encrypted_content, decrypted_content
+            );
+            decryptor_reaction(content_decrypted, password_input, decrypted_content, true);
+        }
+    }
     
     /* Default, try decrypt content when key enter is press */
     password_input.addEventListener('keypress', function(event) {
