@@ -61,8 +61,8 @@ nav:
   - Publications: 'pub.md'
   - Tutorials: 'tut.md'
   - Release: 'release.md'
-  - Github: https://github.com/klab-aizu/PROJ_TEMPLATE
-  - "Our Internal Site": http://klab-int.u-aizu.ac.jp
+  - Github: https://github.com/klab-aizu/Torch2HW
+  - "Our Internal Site": https://klab-aizu.github.io/
   
 plugins:
   - search
