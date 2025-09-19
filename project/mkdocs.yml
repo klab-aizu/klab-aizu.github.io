@@ -1,0 +1,95 @@
+docs_dir: 'PROJ_Torch2HW'
+site_dir: 'PROJ_Torch2HW_site'
+
+site_name: 'Project Torch2HW'
+
+# https://squidfunk.github.io/mkdocs-material/getting-started/#configuration
+theme:
+  name: 'material'
+  logo: assets/logo.svg
+  font: false
+  features:
+    - navigation.tracking
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.sections
+    - toc.follow
+    # - navigation.top
+    - navigation.indexes
+    - navigation.path
+    - toc.integrate
+  palette:
+
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      primary: black
+      accent: orange
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: black
+      accent: orange
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: black
+      accent: orange
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+nav:
+  - Introduction: 'README.md'
+  - Roadmap: 'roadmap.md'
+  - Specification: 
+    - "V1.0": docs/1.0_Spec.md
+  - Members: 'mem.md'
+  - Meeting: 
+    - List of Meetings: 'meeting.md'
+    - "V1.0":
+      - "Kick-off V1.0": meetings/2023-04-01_KickoffV1.md
+  - Demos: 'demo.md'
+  - Publications: 'pub.md'
+  - Tutorials: 'tut.md'
+  - Release: 'release.md'
+  - Github: https://github.com/klab-aizu/Torch2HW
+  - "Our Internal Site": https://klab-aizu.github.io/
+  
+plugins:
+  - search
+  #- mkdocs-jupyter
+  # - git-revision-date
+  # - git-revision-date-localized  
+  - encryptcontent: 
+        placeholder: 'Password'
+        placeholder_user: 'User'
+        password_button: True
+        password_button_text: 'Unlock'
+        button_class: 'md-button md-button--primary' # CSS class for password_button
+        decryption_failure_message: 'Wrong user name or password.'
+        search_index: 'dynamically'
+        password_file: 'passwords.yml'
+        title_prefix: ''
+        summary: '㊙️ This website is password-protected and accessible to authorized members only.'
+        remember_keys : True
+        remember_password: True
+        encrypted_something: 
+            mkdocs-encrypted-toc: [nav, class]
+            mkdocs-encrypted-footer: [div, id]
+            mkdocs-encrypted-footer-meta: [div, id]
+            
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
