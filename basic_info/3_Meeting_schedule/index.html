@@ -29,7 +29,7 @@
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Internal Website @ klab-aizu" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Internal Website @ klab-aizu">
 <img alt="logo" id="logo_light_mode" src="../../assets/logo_2025_light.svg"/>
@@ -100,6 +100,8 @@
 </div>
 </div>
 </nav>
+</header>
+<div class="md-container" data-md-component="container">
 <nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
 <div class="md-grid">
 <ul class="md-tabs__list">
@@ -209,37 +211,13 @@
   
     
   
-  🚧 Project
-
-        </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../link/">
-        
-  
-  
-    
-  
   🌐 Link
 
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="https://github.com/klab-aizu">
-        
-  
-  
-    
-  
-  ↗️ Github
-
-      </a>
+        </a>
 </li>
 </ul>
 </div>
 </nav>
-</header>
-<div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
@@ -474,17 +452,13 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../guidance/">
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
 <span class="md-ellipsis">
     ℹ️ Information
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
-</div>
 <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
@@ -506,6 +480,25 @@
     
   </span>
 </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../guidance/">
+<span class="md-ellipsis">
+    🔰 Checklist for new student orentation meeting
+    
+  </span>
+</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+            🔰 Checklist for new student orentation meeting
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox"/>
@@ -2633,6 +2626,21 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+<span class="md-ellipsis">
+    🌐 Link
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+            🌐 Link
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_10_1" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../project/">
 <span class="md-ellipsis">
@@ -2640,12 +2648,12 @@
     
   </span>
 </a>
-<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+<label class="md-nav__link" for="__nav_10_1" id="__nav_10_1_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_10">
+<nav aria-expanded="false" aria-labelledby="__nav_10_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_10_1">
 <span class="md-nav__icon md-icon"></span>
             🚧 Project
           </label>
@@ -2672,7 +2680,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../link/">
 <span class="md-ellipsis">
-    🌐 Link
+    🌐 Useful link
     
   </span>
 </a>
@@ -2684,6 +2692,9 @@
     
   </span>
 </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -2713,7 +2724,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<div id="mkdocs-encrypted-content" style="display:none">389fYmHWKNmQtk8pKt9ySw==;dLcEuyYv2m72RsK87LFzvTP88tsEtd1jr1/tAEalZvV5XBPHotKV7ry4zpIEbFKlwI+tp06/ZQVXtw1TPRSc/LPz/QdUwySgI4aznTMDvKR+NW7I47isSLcq2rt9UG5gHIUXqbaOgu74McfFRcmguBEcIQVc4yFcaSNWqV+bCYvLn8cDksyL4Eq3YgvVxg1VH+ZHrnt6opr1mpFPdf9xeksTMXDDK/+Yvm0JqB38LJAAMpqzcNEIxc1N6U9Vs5ccPy+T8STiicnfGrpopORqc/IGy0LwAy03cg+Wyyv8xv4hEmO8u76xs8R3bukM2KuIf6Wq75OTVmPW9EdMP/fq19xy6lkEpm6sb3p9rP8+IWGc8q/ZDGdNtfNuMYbJtWoMU+K9HrhlmwnBq90hx0J7jSqjAu0jSM2ju1C1/BkbwjdfFloRapPkq7b2SK6Oz2GtBMh7EOUgWJ3NvEDBNvDM+VH4OeoIU3yoWygD/m70KUtWzDga4dADgoohAEkLPjjp7A5fBEt22Pi+gqz8LcKtYsC2QQXUAP9Y3PCLsJHQZYIEbd1QBVWzrzeVnjk+7o7RsYor8xmnmvFKVJHMxt7JqoCpBA/eAdx6rAOWVjstOllUTOOc6jN833qxzvUwDzgQmLrxKvpt0SPbSS4EwCSum+8pdD4l7ScnqFwCjp4jbXkeC9eSx+04c5A8VZ0tG6ntC/AkwEIIDHk3xVFOud9a5ZySEuDFVJilu7IdIoDdN4QgLHGjpU4G8yPOisGcN+0cUOvS7eLzyX3SAq0Ak9NRy5HHxri/G9dyig/WqhncPXxM5q9yctujzooxLN31pumiHlkYncT6+gbXR/ln2vbRxMaqNA485MphmNkD5EWbIkI4oWnVXprAhPW11wkuSvqaP+pt6KJzuNULd9x7vKHX+ScKH+N5hj3SzwA1UODwJsopLIfV0WBJWbyXlmDaHoekINFIeOmB1dc0S9y2S0RSZ0IUCIuxUBAK8SQBZrPU6h3eNr7h0Yw27ywMcS7gr/Pr69O4FcpYkca2MoiAmnTUMjYp+Gb5Xy+iDsPcnJpz8ORM1Q6YleB4Z71uG6SqiOUjuJFlklN7Fy0lwPee0Uc8nez6G1ZAMC9o9EYtcIof47T6g4y9WeMuGWj38Q/vcX2qpwRwYNQweaNeZse+pkgcohTsh6hmVJJKxCXbRaRUcLut+5sMGBKxzfyj5tka07ZuhlSDefag10/IbtjCJzrRi46b3KcNwtsFILr9VbeBpVXsTM7ULks0WkFjTHNtrqx0IPZPRrlNaBJI01BLhxU0LWB8WEL6FzAabqaWBwCvk89g3WDDDLYXSJ9Y5ZTyADsu23DL9fzYdLAYUExHaIbrPbedoQ2CEwlylXSl66j+293MOc0S/IhKvzaDzZb7VxmfHYLfiTuTvGL5PoPtsh25KNmLIX511lFL3uVqWcsA9TR0In+ykresGJ3Vh0Po054Ur2F39WEBYbkdV6jlHEHFbwZn5GO4tYUbsQkKLjuoD/D3/NEJDzPu6aWxg9Azhfk9P81w8RQewQF192k7itd+TQaREEPygbS4fjDKh8TK4y6OmWbBK0lZpEhGLUBAmwQOenTcYcEN+xYG7V2KbnzqJ5/dzvKxGNR6NnQFDPjT9/he0Yi9WFL7JxOJpFBSMeiilRAjlf13MSmIKY2d0E3hDuw0pMJyMLDVyPdJVX7rwg4j7oyCqVV5+mChGCUjDJMLx9AEdev3e+iTlJd5JRsi6Jq8Z58omF6K2m4lLAdgdRJfj5qPtqg2XSlWiAMzfOQ0ocGKIyt6TtWFdUZhZWGnAKmHpyUuv2kabYH6z3ZXO9Tjda5t9IfAzVF+pKmyH88yejMosHrM3dI/iOwr1DziH8N2f7F9ymRWTvNd3CZPVki5SBX6ab7BppOgeNHCW4e1aTcgd9K7T9hmE9sXmgWutq9Qe7tyzIEZ6WXoE91O8GGkZPNFZSm8lrucL7hHEH2OZINLfjpyf1frv0ddmryMFu20I88+IDAoMzsXYfqq2fjxvkwGGKMIb2PnaP9VlwQbL6pSuHqmXHw7651KA2/zLVd2PGYt9R1lKAUF7p33u38BGaHccZv2b96XIqIg4TrNEbY7l1MABTLyoZEDvV47MrjXs/UHxEUuPn3NleOGL0fQSZKOxzcdomVOMuSllenVj6cq6s4++nyK2/a6sZkOYxbXw3dm1lgRWyJyHiiLlyWnclWGjE11+zwnVWwKAyOTMITIYd/T+E1PWsFd+TbLp9yEh0dYGE4ZUru7QlNVk9w=</div>
+<div id="mkdocs-encrypted-content" style="display:none">3+8LraCX7Me/d0AuYCfVcA==;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</div>
 <div id="mkdocs-decrypted-content" style="display:none">
 <form class="md-content__inner md-typeset" id="mkdocs-decrypt-form">
 <h1>㊙️ This website is password-protected and accessible to authorized members only.</h1>
@@ -2728,7 +2739,7 @@
 var encryptcontent_id = "encryptcontent_1";
 var encryptcontent_path = "basic_info/3_Meeting_schedule/";
 var decryption_failure_message = "Wrong user name or password.";
-var encryptcontent_keystore = ["IzYD9XLrJ/gntzyddwQCUQ==;gB+kA1kCfITmJkNIuNSMHBHtR35j5mn2NjNz+F5UydBBpoI3wQWQQ2T/2n12gNynh9g6p34QrcrArDxlgHgGPJ7a0avzBkJwSHCQXXNIMHNzCCluourTtdWdWKiG3yzi;AwsoAIHqI3ZVtIJWjaI0iQ==;suXr/Jyl6EnEcp41ju83rddsVwVg0c+EBtS4aeS26+4="];
+var encryptcontent_keystore = ["1GKYFeeWCjOUE6jV9pGV6A==;tgi9YyZYM/u5eYmMVtgFeeqJShTktM6Pr2oghiix/eUGhmOkFA4Ii47evB4OC3TscZnmKVyrN/uvIeKMURsx+xGbjOdUBRGUfkjMFfEsk+Pi4b5wWmt9hLS7DkaKJArX;AwsoAIHqI3ZVtIJWjaI0iQ==;suXr/Jyl6EnEcp41ju83rddsVwVg0c+EBtS4aeS26+4="];
 var encryptcontent_obfuscate = 0;
 
 </script>
@@ -2744,10 +2755,6 @@ var encryptcontent_obfuscate = 0;
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
 </div>
-<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
-  Back to top
-</button>
 </main>
 <footer class="md-footer">
 <div class="md-footer-meta md-typeset">
@@ -2764,7 +2771,7 @@ var encryptcontent_obfuscate = 0;
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.sections", "toc.follow", "navigation.top", "navigation.indexes", "navigation.path"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.instant", "navigation.sections", "toc.follow", "navigation.indexes", "navigation.path"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.a38e211f.min.js"></script>
 <script src="../../javascripts/mathjax.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

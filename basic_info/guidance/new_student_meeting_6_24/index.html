@@ -27,7 +27,7 @@
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Internal Website @ klab-aizu" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Internal Website @ klab-aizu">
 <img alt="logo" id="logo_light_mode" src="../../../assets/logo_2025_light.svg"/>
@@ -98,6 +98,8 @@
 </div>
 </div>
 </nav>
+</header>
+<div class="md-container" data-md-component="container">
 <nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
 <div class="md-grid">
 <ul class="md-tabs__list">
@@ -207,37 +209,13 @@
   
     
   
-  🚧 Project
-
-        </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../link/">
-        
-  
-  
-    
-  
   🌐 Link
 
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="https://github.com/klab-aizu">
-        
-  
-  
-    
-  
-  ↗️ Github
-
-      </a>
+        </a>
 </li>
 </ul>
 </div>
 </nav>
-</header>
-<div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
@@ -472,17 +450,13 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../">
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
 <span class="md-ellipsis">
     ℹ️ Information
     
   </span>
-</a>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
-</div>
 <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
@@ -504,6 +478,25 @@
     
   </span>
 </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    🔰 Checklist for new student orentation meeting
+    
+  </span>
+</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+            🔰 Checklist for new student orentation meeting
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox"/>
@@ -2608,6 +2601,21 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+<span class="md-ellipsis">
+    🌐 Link
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+            🌐 Link
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_10_1" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../project/">
 <span class="md-ellipsis">
@@ -2615,12 +2623,12 @@
     
   </span>
 </a>
-<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+<label class="md-nav__link" for="__nav_10_1" id="__nav_10_1_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_10">
+<nav aria-expanded="false" aria-labelledby="__nav_10_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_10_1">
 <span class="md-nav__icon md-icon"></span>
             🚧 Project
           </label>
@@ -2647,7 +2655,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../link/">
 <span class="md-ellipsis">
-    🌐 Link
+    🌐 Useful link
     
   </span>
 </a>
@@ -2659,6 +2667,9 @@
     
   </span>
 </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -2702,7 +2713,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<div id="mkdocs-encrypted-content" style="display:none">7OFxK/Znms1UXh1xS9GqMw==;4b6csxx7qNLNuC+37K3yX6lGsLanYO3P9j576eXbYiJe5mYUflxPU1KoxQ2IAi06C++dqmuVKW0A9xE+3UlhqxaM9uRhXIGW4IWrHNu5/EqaoZZon1oQeI/HKL5tVYa2tpFjUvS9Sw3+1h09nrcC+sFsRyGrjdJQFIG3Z94J2+3lMv+XZmrgFE2b0mzSZOQjdVJxW0aK5W1KIX3Fpfv6KcXa5JsvkiH1OJBXnBZ8nCaKCiZTDUBsseiFcASe5r+umXKUqcN8+CSUap/cUj9b5J902wr1EK0fmgUYuldEMAzocEoVdKGk8izT3NTaZGCP8ytWFsAXj7Jb0xB2FHew6DFQ/qaIsu0jz487uQe37YEhHyErAYWMVfDvKmmLLuPLHv6RSsIVrxMnN75YzFf7XGJRO9THJlxm+uvtQYaR+PDsKrTPiSoUfhS4j60A6SBUKy9MQFdOJsbujLhpGupeDUlnQiDrXeQAsP5bc42oqe+NsdAxFfnP7RGy5U0frTG4Ce1ZuKktu5uK9wG0NkLM82BlO9Kyd8AwMYagJZpGiVUT0Dc/bgAYL//mJCMUqthKo/rhx2aeu5eKEDe5RA9lZLDd8vpAL8cegjK6yLBrmHlHQ8ueqz97D+yTzX51nfauW+fggQYm1Q1HhxHljUCNJKQlsO5aFhUsCuc+NVljIXxSf8YP0CkJbVeKll4tDFkJ+3XaPXumHQxpba1WaBT+QX7F7EVjpsHTfE4CT4Fnqf5d/ecJXXLNF6/599IQ6i4zlVJ5nDiERMq1IrAKlpS0lx6vRORv1MSuXgvHTwmZd1Z62OqJNFagDHgYM/cn+FUR1D+2FmDLuTT95eeqfNC73eRCjE0qeFOUm3WQKkpiWFV0mrY+Pf4YZH7JiSLFpHSD1pwtIyh6Q3oyUkUuDSDn8KKiyIInM5gAxpWpEcgMhcRMTYn7eG5NNExVk7Ixdkk0TfLlVwVFci3MYjUDy3fLpgXxAaLUwNW+mACtsX3vx2vV/AAuxiYsRKkWlRqRzO3A</div>
+<div id="mkdocs-encrypted-content" style="display:none">0kA/m1+x2MmrBpFcAgWi0g==;LPsqSvTuPvqDHk63phKgynmu+97cHwD4dPVIu/+nEhYntf6MAGPoFgeMplIabv5R2D99MAYAEYcoAlNkYZ90VwVX/U44Pw3p3TyjFwNTuMA5dSD0dxAqQMm0qWQpuRIFhYMgEzjeISUAE8l3B6oElX+ETTjuz6PCWhocRRCyHeIuTIDZtAFRypr4J8RLFpLzA6S1ZPOlA7fzVOim46GknxtbcYfbnex8B/0SmHy33ll8aKoqW1YKAaIMfKEDIIqZCRdAAblxo+0s1fbF93CXRIgizq98Z2MZhcAw/WMdSk7dbYtbpltwMINcwGrrYk4glNIv9mf41d2fyMAVoO3EG+TGSe3WNKCQ6GqQ35XmfWYqhN+EtSARtPJICLstisGP3WCTU96Mj13Ph8RLVzCJh7bUic8dVho6uo7AMD7VMVSM3hIcRuv5cMt/HtKuAIup5mp5clvGTtFJteClLLnL4ia9DQbvtM8xEn5U1L118zII80fulyjeksn/aRJYbQOhENUHnKsLm6s+SWU0kHd2SkXXeeJtm5fg/GuA2clq3JZQKPkXUCR6IBrSxXwNdZvydDkPWz5I8eeekggL3/IHTOo3lRiSvlF5SFGCBp1GjVWIJYlwZKkSf1mAZa2LV8WoDYQltxJ6tG9uwLb5m9j4UWb3LXo/lfn9mdo3kz/Yl0KVyH6F4EQKL+nwt8J3jX5TW85xzpu8nIsIRcwvtvoZyx2OyDVumD1qMS90y+zMNZDCovUJVQc6mJJh40viFarcRjNzfAojFYBp+pIy9B1vT0s/Q4UCuTtDlcgboDfGpaIYjnxENpel1+kB4HF87BkqwUgkdh24RrUXu1htueJ9XAFlSLnbY61KCDD/p+fDZb+mGdlDzibMy6YDRgrZBSnlzzw+eRFl6hc6BSJs70/KBP+dwda0k+OiDX9Fc8MROdOT6BodGirW00RisxcFTnV2KSuni/lh4/wzWEAbQ0l2TXHI8uwVip6Ngidm1XeYBKISolu/J5BjnRVZpzt7bGzB</div>
 <div id="mkdocs-decrypted-content" style="display:none">
 <form class="md-content__inner md-typeset" id="mkdocs-decrypt-form">
 <h1>㊙️ This website is password-protected and accessible to authorized members only.</h1>
@@ -2717,7 +2728,7 @@
 var encryptcontent_id = "encryptcontent_1";
 var encryptcontent_path = "basic_info/guidance/new_student_meeting_6_24/";
 var decryption_failure_message = "Wrong user name or password.";
-var encryptcontent_keystore = ["IzYD9XLrJ/gntzyddwQCUQ==;gB+kA1kCfITmJkNIuNSMHBHtR35j5mn2NjNz+F5UydBBpoI3wQWQQ2T/2n12gNynh9g6p34QrcrArDxlgHgGPJ7a0avzBkJwSHCQXXNIMHNzCCluourTtdWdWKiG3yzi;AwsoAIHqI3ZVtIJWjaI0iQ==;suXr/Jyl6EnEcp41ju83rddsVwVg0c+EBtS4aeS26+4="];
+var encryptcontent_keystore = ["1GKYFeeWCjOUE6jV9pGV6A==;tgi9YyZYM/u5eYmMVtgFeeqJShTktM6Pr2oghiix/eUGhmOkFA4Ii47evB4OC3TscZnmKVyrN/uvIeKMURsx+xGbjOdUBRGUfkjMFfEsk+Pi4b5wWmt9hLS7DkaKJArX;AwsoAIHqI3ZVtIJWjaI0iQ==;suXr/Jyl6EnEcp41ju83rddsVwVg0c+EBtS4aeS26+4="];
 var encryptcontent_obfuscate = 0;
 
 </script>
@@ -2733,10 +2744,6 @@ var encryptcontent_obfuscate = 0;
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
 </div>
-<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
-  Back to top
-</button>
 </main>
 <footer class="md-footer">
 <div class="md-footer-meta md-typeset">
@@ -2753,7 +2760,7 @@ var encryptcontent_obfuscate = 0;
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.sections", "toc.follow", "navigation.top", "navigation.indexes", "navigation.path"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.instant", "navigation.sections", "toc.follow", "navigation.indexes", "navigation.path"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../../assets/javascripts/bundle.a38e211f.min.js"></script>
 <script src="../../../javascripts/mathjax.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
